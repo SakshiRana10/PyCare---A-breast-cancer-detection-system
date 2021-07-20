@@ -1,0 +1,110 @@
+<html>
+	<head>
+
+		</style>
+	<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+		<title>Breast Cancer Test</title>
+	</head>
+	<body>
+	<!-- Java Script -->	
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+		
+		<!-- Navbar-->
+		<nav class="navbar navbar-dark bg-dark">
+			<span class="navbar-brand mb-0 h1">Breast Cancer Test</span>
+		</nav>
+		<div class="container">
+			<br>
+			<!--Form-->
+			<form action = "{{url_for('predict')}}" method ="POST" >
+				<fieldset>
+				<legend>Breast Cancer Detection Form</legend><br>
+				  <div class="card card-body" >
+					  <div class="form-group  row">
+						<div class="col-sm-3">
+							<label for="radius_mean">Clump Thickness</label>
+							<input type="number" class="form-control" id="radius_mean" name="radius_mean" max="3" min="0"  pattern="{0-3}"
+							title="This value should be Between 0 - 3"required>
+						</div>
+						<div class="col-sm-3">
+							<label for="texture_mean">Uniformity of Cell Size</label>
+							<input type="number" class="form-control" id="texture_mean" name="texture_mean" max="3" min="0" pattern="{0-3}"
+							title="This value should be Between 0 - 3" required>
+					   </div>
+					  </div>
+					  <br>
+					  <div class="form-group  row">
+						  <div class="col-sm">
+							<label for="perimeter_mean">Uniformity of Cell Shape</label>
+							<input type="number" class="form-control" id="perimeter_mean" name="perimeter_mean" max="3" min="0" pattern="{0-3}"
+							title="This value should be Between 0 - 3" required>
+						  </div>
+						  <div class="col-sm">
+							<label for="area_mean">Marginal Adhesion</label>
+							<input type="number" class="form-control" id="area_mean" name="area_mean" max="3" min="0" pattern="{0-3}"
+							title="This value should be Between 0 - 3" required>
+						  </div>
+						  <div class="col-sm">
+							<label for="smoothness_mean">Single Epithelial Cell Size</label>
+							<input type="number" class="form-control" id="smoothness_mean" name="smoothness_mean" max="3" min="0" pattern="{0-3}"
+							title="This value should be Between 0 - 3" required>
+						  </div>
+						  <div class="col-sm">
+							<label for="compactness_mean">Bare Nuclei</label>
+							<input type="number" class="form-control" id="compactness_mean" name="compactness_mean" max="3" min="0"  pattern="{0-3}"
+							title="This value should be Between 0 - 3" required>
+						</div>
+					  </div>
+					  
+					  <br>
+					  <div class="form-group row">
+							<div class="col-sm">
+								<label for="concavity_mean">Bland Chromatin </label>
+								<input type="number" class="form-control" id="concavity_mean" name="concavity_mean" max="3" min="0"  pattern="{0-3}"
+								title="This value should be Between 0 - 3" required>
+							  </div>
+							  <div class="col-sm">
+								<label for="concave points_mean">Normal Nucleoli</label>
+								<input type="number" class="form-control" id="concave points_mean" name="concave points_mean" max="3" min="0" pattern="{0-3}"
+								title="This value should be Between 0 - 3"  required>
+							  </div>
+							  <div class="col-sm">
+								<label for="symmetry_mean">Mitoses</label>
+								<input type="number" step="any" class="form-control" id="symmetry_mean" name="symmetry_mean" max="3" min="0"  pattern="{0-3}"
+								title="This value should be Between 0 - 3" required>
+							  </div>
+							  <div class="col-sm">
+								<label for="fractal_dimension_mean">fractal_dimension_mean</label>
+								<input type="number" step="any" class="form-control" id="fractal_dimension_mean" name="fractal_dimension_mean" max="3" min="0" pattern="{0-3}"
+								title="This value should be Between 0 - 3"  required>
+							  </div>
+						  </div>
+						  <br>
+						  
+						  
+						  
+					  </div>
+					  <br>
+					  <div class="form-group">
+						<input class="btn btn-primary" type="submit" value="Result">
+					  </div>
+					  
+					  <!--Prediction Result-->
+					  <div id ="result">
+							<strong style="color:red">{{result}}</strong>
+					 </div>
+				     </div>
+			 </fieldset>
+			</form>
+			
+		</div>
+		
+	</body>
+</html>
